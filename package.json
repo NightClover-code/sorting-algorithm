@@ -1,0 +1,17 @@
+{
+  "name": "sorting-algorithm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/NightClover-code/sorting-algorithm",
+  "author": "Achraf Elmouhib <elmouhib2003achraf@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently yarn:start:*"
+  },
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.7"
+  }
+}
