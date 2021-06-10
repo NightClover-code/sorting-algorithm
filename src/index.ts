@@ -72,20 +72,16 @@ class SorterStart {
       this.linkedList.add(item);
     }
 
-    this.printLinkedList();
+    console.log(`Previous Linked List: `);
+    this.linkedList.print();
+    this.linkedList.sort();
+    console.log(`\nSorted Linked List: `);
+    this.linkedList.print();
   }
 
   print({ data, dataStructure, dataText }: Print) {
     console.log(`Previous ${dataText}: `, data);
     console.log(`Sorted ${dataText}: `, dataStructure.data);
-  }
-
-  printLinkedList() {
-    console.log(`Previous Linked List: `);
-    this.linkedList.print();
-    this.linkedList.sort();
-    console.log(`Sorted Linked List: `);
-    this.linkedList.print();
   }
 }
 
