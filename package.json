@@ -1,5 +1,5 @@
 {
-  "name": "@sorting-algo/bubble-sort",
+  "name": "sorting-algo",
   "version": "1.0.0",
   "description": "Sort multiple types of data structures using Bubble Sort.",
   "main": "build/index.js",
@@ -21,7 +21,8 @@
     "serve:build": "tsc -w",
     "serve:run": "nodemon build/index.js",
     "start:build": "tsc",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "prepublishOnly": "tsc"
   },
   "dependencies": {
     "prompt-radio": "^1.2.1",
