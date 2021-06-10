@@ -87,5 +87,4 @@ class SorterStart {
 }
 
 //start sorting
-const sorterStart = new SorterStart();
-sorterStart.startSorting();
+export const sorterStart = new SorterStart();
