@@ -6,12 +6,15 @@
   "author": "Achraf Elmouhib <elmouhib2003achraf@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start:build": "tsc -w",
-    "start:run": "nodemon build/index.js",
-    "start": "concurrently yarn:start:*"
+    "serve:build": "tsc -w",
+    "serve:run": "nodemon build/index.js",
+    "start:build": "tsc",
+    "start": "node build/index.js"
   },
   "dependencies": {
     "concurrently": "^6.2.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "prompt-radio": "^1.2.1",
+    "prompt-sync": "^4.2.0"
   }
 }
