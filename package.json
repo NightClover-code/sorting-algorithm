@@ -1,5 +1,5 @@
 {
-  "name": "sorting-algo",
+  "name": "sorting-algo-ts",
   "version": "1.0.0",
   "description": "Sort multiple types of data structures using Bubble Sort.",
   "main": "build/index.js",
@@ -7,6 +7,9 @@
   "files": [
     "build"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "bubble-sort",
     "typescript",
