@@ -1,4 +1,3 @@
-#!usr/bin/env node
 //importing utils
 const Radio = require('prompt-radio');
 const usePrompt = require('prompt-sync')();
