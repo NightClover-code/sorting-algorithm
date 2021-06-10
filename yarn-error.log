@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\ADS\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/prompt-radio
+  C:\Program Files\nodejs\node.exe C:\Users\ADS\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js publish
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ADS\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\nodejs;C:\Users\ADS\AppData\Local\Microsoft\WindowsApps;C:\Users\ADS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ADS\AppData\Roaming\npm
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fprompt-radio: Not found
+  Error: https://npm.pkg.github.com/@sorting-algo/-/user/org.couchdb.user:achraf-dev: Your request could not be authenticated by the GitHub Packages service. Please ensure your access token is valid and has the appropriate scopes configured.
       at Request.params.callback [as _callback] (C:\Users\ADS\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66988:18)
       at Request.self.callback (C:\Users\ADS\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
       at Request.emit (events.js:315:20)
@@ -28,9 +28,21 @@ Trace:
 
 npm manifest: 
   {
-    "name": "sorting-algorithm",
+    "name": "@sorting-algo/bubble-sort",
     "version": "1.0.0",
-    "main": "index.js",
+    "description": "Sort multiple types of data structures using Bubble Sort.",
+    "main": "build/index.js",
+    "bin": "build/index.js",
+    "files": [
+      "build"
+    ],
+    "keywords": [
+      "bubble-sort",
+      "typescript",
+      "ts",
+      "algorithm",
+      "sorting"
+    ],
     "repository": "https://github.com/NightClover-code/sorting-algorithm",
     "author": "Achraf Elmouhib <elmouhib2003achraf@gmail.com>",
     "license": "MIT",
@@ -41,10 +53,12 @@ npm manifest:
       "start": "node build/index.js"
     },
     "dependencies": {
-      "concurrently": "^6.2.0",
-      "nodemon": "^2.0.7",
       "prompt-radio": "^1.2.1",
       "prompt-sync": "^4.2.0"
+    },
+    "devDependencies": {
+      "concurrently": "^6.2.0",
+      "nodemon": "^2.0.7"
     }
   }
 
@@ -57,18 +71,18 @@ Lockfile:
   
   
   "@babel/code-frame@^7.0.0":
-    version "7.12.13"
-    resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.13.tgz#dcfc826beef65e75c50e21d3837d7d95798dd658"
-    integrity sha512-HV1Cm0Q3ZrpCR93tkWOYiuYIgLxZXZFVG2VgK+MBWjUqZTundupbfx2aXarXuw5Ko5aMcjtJgbSs4vUGBS5v6g==
+    version "7.14.5"
+    resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.14.5.tgz#23b08d740e83f49c5e59945fbf1b43e80bbf4edb"
+    integrity sha512-9pzDqyc6OLDaqe+zbACgFkb6fKMNG6CObKpnYXChRsvYGyEdc7CA2BaqeOM+vOtCS5ndmJicPJhKAwYRI6UfFw==
     dependencies:
-      "@babel/highlight" "^7.12.13"
+      "@babel/highlight" "^7.14.5"
   
   "@babel/helper-validator-identifier@^7.14.5":
     version "7.14.5"
     resolved "https://registry.yarnpkg.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.14.5.tgz#d0f0e277c512e0c938277faa85a3968c9a44c0e8"
     integrity sha512-5lsetuxCLilmVGyiLEfoHBRX8UCFD+1m2x3Rj97WrW3V7H3u4RWRXA4evMjImCsin2J2YT0QaVDGf+z8ondbAg==
   
-  "@babel/highlight@^7.12.13":
+  "@babel/highlight@^7.14.5":
     version "7.14.5"
     resolved "https://registry.yarnpkg.com/@babel/highlight/-/highlight-7.14.5.tgz#6861a52f03966405001f6aa534a01a24d99e8cd9"
     integrity sha512-qf9u2WFWVV0MppaL877j2dBtQIDgmidgjGk5VIMw3OadXvYaXn66U1BFlH2t4+t3i+8PhedppRv+i40ABzd+gg==
