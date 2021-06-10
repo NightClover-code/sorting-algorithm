@@ -1,7 +1,8 @@
+//importing classes
 import { Sorter } from './Sorter';
+import { NumbersCollection } from './NumbersCollection';
 
-const sorter = new Sorter([10, 5, 65, 321, -32, -3, 0]);
+const numbersCollection = new NumbersCollection([0, 5, 6, -6, 9]);
+const sorter = new Sorter(numbersCollection);
 
 sorter.sort();
-
-console.log(sorter.collection);
