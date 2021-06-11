@@ -44,7 +44,7 @@ class SorterStart {
 
     const numbersCollection = new NumbersCollection(this.numbers);
 
-    this.print({
+    this.sortAndPrint({
       data: this.numbers,
       dataStructure: numbersCollection,
       dataText: 'nums',
@@ -55,7 +55,7 @@ class SorterStart {
     const characters = usePrompt('Enter a string of characters: ');
     const charactersCollection = new CharactersCollection(characters);
 
-    this.print({
+    this.sortAndPrint({
       data: characters,
       dataStructure: charactersCollection,
       dataText: 'characters',
@@ -72,12 +72,12 @@ class SorterStart {
 
     console.log(`Previous Linked List: `);
     this.linkedList.print();
-    this.linkedList.sort();
+    this.linkedList.print();
     console.log(`\nSorted Linked List: `);
     this.linkedList.print();
   }
 
-  print({ data, dataStructure, dataText }: Print) {
+  sortAndPrint({ data, dataStructure, dataText }: Print) {
     console.log(`Previous ${dataText}: `, data);
     dataStructure.sort();
     console.log(`Sorted ${dataText}: `, dataStructure.data);
