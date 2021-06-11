@@ -44,7 +44,6 @@ class SorterStart {
 
     const numbersCollection = new NumbersCollection(this.numbers);
 
-    numbersCollection.sort();
     this.print({
       data: this.numbers,
       dataStructure: numbersCollection,
@@ -56,7 +55,6 @@ class SorterStart {
     const characters = usePrompt('Enter a string of characters: ');
     const charactersCollection = new CharactersCollection(characters);
 
-    charactersCollection.sort();
     this.print({
       data: characters,
       dataStructure: charactersCollection,
@@ -81,6 +79,7 @@ class SorterStart {
 
   print({ data, dataStructure, dataText }: Print) {
     console.log(`Previous ${dataText}: `, data);
+    dataStructure.sort();
     console.log(`Sorted ${dataText}: `, dataStructure.data);
   }
 }

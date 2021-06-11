@@ -24,7 +24,7 @@
     "serve:build": "tsc -w",
     "serve:run": "nodemon build/index.js",
     "start:build": "tsc",
-    "start": "node build/index.js",
+    "start": "node build/cli/index.js start",
     "prepublishOnly": "tsc"
   },
   "dependencies": {
