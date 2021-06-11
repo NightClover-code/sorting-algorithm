@@ -1,6 +1,6 @@
 {
   "name": "sorting-algo-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Sort multiple types of data structures using Bubble Sort.",
   "main": "build/cli/index.js",
   "bin": "build/cli/index.js",
@@ -28,12 +28,12 @@
     "prepublishOnly": "tsc"
   },
   "dependencies": {
+    "commander": "^7.2.0",
     "prompt-radio": "^1.2.1",
     "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
     "@types/node": "^15.12.2",
-    "commander": "^7.2.0",
     "concurrently": "^6.2.0",
     "nodemon": "^2.0.7"
   }
