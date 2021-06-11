@@ -2,9 +2,9 @@
 const Radio = require('prompt-radio');
 const usePrompt = require('prompt-sync')();
 //importing classes
-import { NumbersCollection } from './NumbersCollection';
-import { CharactersCollection } from './CharactersCollection';
-import { LinkedList } from './LinkedList';
+import { NumbersCollection } from './structures/NumbersCollection';
+import { CharactersCollection } from './structures/CharactersCollection';
+import { LinkedList } from './structures/LinkedList';
 
 interface Print {
   dataStructure: NumbersCollection | CharactersCollection;
