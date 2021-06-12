@@ -72,7 +72,7 @@ class SorterStart {
 
     console.log(`Previous Linked List: `);
     this.linkedList.print();
-    this.linkedList.print();
+    this.linkedList.sort();
     console.log(`\nSorted Linked List: `);
     this.linkedList.print();
   }
