@@ -1,6 +1,6 @@
 {
   "name": "sorting-algo-ts",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Sort multiple types of data structures using Bubble Sort.",
   "main": "build/cli/index.js",
   "bin": "build/cli/index.js",
