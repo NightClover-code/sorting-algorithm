@@ -11,11 +11,11 @@ data structures (other than the ones provided with the cli) without starting fro
 
 This is a npm package, to get it on your machine run the following command:
 
-```npm i -g sorting-algo-ts@1.1.2```
+```npm i -g sorting-algo-ts@1.1.3```
 
 or 
 
-```yarn global add sorting-algo-ts@1.1.2```
+```yarn global add sorting-algo-ts@1.1.3```
 
 After  downloading the package, run the follwing command:
 
