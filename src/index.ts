@@ -22,11 +22,10 @@ class SorterStart {
   });
 
   startSorting() {
-    this.radioPrompt.ask((answer: any) => {
-      let dataStructure = answer;
-      if (dataStructure === 'Array of Numbers') {
+    this.radioPrompt.ask((answer: answer) => {
+      if (answer === 'Array of Numbers') {
         this.sortNumbers();
-      } else if (dataStructure === 'String') {
+      } else if (answer === 'String') {
         this.sortCharacters();
       } else {
         this.sortLinkedList();
