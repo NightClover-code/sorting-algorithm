@@ -13,7 +13,6 @@ interface Print {
 }
 
 class SorterStart {
-  linkedList = new LinkedList();
   numbers: number[] = [];
   radioPrompt = new Radio({
     name: 'dataStructures',
@@ -63,17 +62,18 @@ class SorterStart {
 
   sortLinkedList() {
     const len = usePrompt('Enter the number of items to append to the list: ');
+    const linkedList = new LinkedList();
 
     for (let i = 0; i < len; i++) {
       const item = usePrompt(`Enter the value ${i}: `);
-      this.linkedList.add(item);
+      linkedList.add(item);
     }
 
     console.log(`Previous Linked List: `);
-    this.linkedList.print();
-    this.linkedList.sort();
+    linkedList.print();
+    linkedList.sort();
     console.log(`\nSorted Linked List: `);
-    this.linkedList.print();
+    linkedList.print();
   }
 
   sortAndPrint({ data, dataStructure, dataText }: Print) {
