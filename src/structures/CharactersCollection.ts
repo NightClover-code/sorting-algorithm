@@ -1,9 +1,7 @@
 import { Sorter } from '../Sorter';
 
 export class CharactersCollection extends Sorter {
-  constructor(public data: string) {
-    super();
-  }
+  data: string = '';
 
   get length(): number {
     return this.data.length;
@@ -25,7 +23,9 @@ export class CharactersCollection extends Sorter {
     this.data = data.join('');
   }
 
-  sortUserInput(): void {
+  sortUserInput(characters: string): void {
+    this.data = characters;
+
     this.sortAndPrint({
       data: this.data,
       dataStructure: this,

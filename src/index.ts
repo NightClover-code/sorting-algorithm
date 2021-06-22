@@ -7,6 +7,10 @@ import { CharactersCollection } from './structures/CharactersCollection';
 import { LinkedList } from './structures/LinkedList';
 
 class SorterStart {
+  numbersCollection = new NumbersCollection();
+  linkedList = new LinkedList();
+  characters = new CharactersCollection();
+
   radioPrompt = new Radio({
     name: 'dataStructures',
     message: 'What data structure would you like to sort?',
@@ -17,15 +21,15 @@ class SorterStart {
     this.radioPrompt.ask((answer: answer) => {
       if (answer === 'Array of Numbers') {
         const len = usePrompt('Enter the length of the array: ');
-        new NumbersCollection().sortUserInput(len);
+        this.numbersCollection.sortUserInput(len);
       } else if (answer === 'String') {
         const characters = usePrompt('Enter a string of characters: ');
-        new CharactersCollection(characters).sortUserInput();
+        this.characters.sortUserInput(characters);
       } else {
         const len = usePrompt(
           'Enter the number of items to append to the list: '
         );
-        new LinkedList().sortUserInput(len);
+        this.linkedList.sortUserInput(len);
       }
     });
   }
