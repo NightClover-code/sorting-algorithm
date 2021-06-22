@@ -4,27 +4,21 @@ const usePrompt = require('prompt-sync')();
 export class NumbersCollection extends Sorter {
   numbers: number[] = [];
 
-  constructor(public data: number[]) {
-    super();
-  }
-
   get length(): number {
-    return this.data.length;
+    return this.numbers.length;
   }
 
   compare(leftIndex: number, rightIndex: number): boolean {
-    return this.data[leftIndex] > this.data[rightIndex];
+    return this.numbers[leftIndex] > this.numbers[rightIndex];
   }
 
   swap(leftIndex: number, rightIndex: number): void {
-    const leftHand = this.data[leftIndex];
-    this.data[leftIndex] = this.data[rightIndex];
-    this.data[rightIndex] = leftHand;
+    const leftHand = this.numbers[leftIndex];
+    this.numbers[leftIndex] = this.numbers[rightIndex];
+    this.numbers[rightIndex] = leftHand;
   }
 
-  sortUserInput() {
-    const len = usePrompt('Enter the length of the array: ');
-
+  sortUserInput(len: number): void {
     for (let i = 0; i < len; i++) {
       const item = usePrompt(`Enter the value [${i}]: `);
       this.numbers.push(item);
@@ -32,7 +26,7 @@ export class NumbersCollection extends Sorter {
 
     this.sortAndPrint({
       data: this.numbers,
-      dataStructure: new NumbersCollection(this.numbers),
+      dataStructure: this,
       dataText: 'nums',
     });
   }

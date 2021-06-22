@@ -89,9 +89,7 @@ export class LinkedList extends Sorter {
     }
   }
 
-  sortUserInput() {
-    const len = usePrompt('Enter the number of items to append to the list: ');
-
+  sortUserInput(len: number) {
     for (let i = 0; i < len; i++) {
       const item = usePrompt(`Enter the value ${i}: `);
       this.add(item);

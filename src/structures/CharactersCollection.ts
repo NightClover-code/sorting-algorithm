@@ -1,37 +1,33 @@
 import { Sorter } from '../Sorter';
-const usePrompt = require('prompt-sync')();
 
 export class CharactersCollection extends Sorter {
-  constructor(public data: string) {
-    super();
-  }
+  characters: string = '';
 
   get length(): number {
-    return this.data.length;
+    return this.characters.length;
   }
 
   compare(leftIndex: number, rightIndex: number): boolean {
     return (
-      this.data[leftIndex].toLowerCase() > this.data[rightIndex].toLowerCase()
+      this.characters[leftIndex].toLowerCase() >
+      this.characters[rightIndex].toLowerCase()
     );
   }
 
   swap(leftIndex: number, rightIndex: number): void {
-    const characters = this.data.split('');
+    const characters = this.characters.split('');
 
     const leftHand = characters[leftIndex];
     characters[leftIndex] = characters[rightIndex];
     characters[rightIndex] = leftHand;
 
-    this.data = characters.join('');
+    this.characters = characters.join('');
   }
 
-  sortUserInput() {
-    const characters = usePrompt('Enter a string of characters: ');
-
+  sortUserInput(characters: string): void {
     this.sortAndPrint({
       data: characters,
-      dataStructure: new CharactersCollection(characters),
+      dataStructure: this,
       dataText: 'characters',
     });
   }

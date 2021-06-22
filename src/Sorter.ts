@@ -1,16 +1,7 @@
-//importing utils
-const Radio = require('prompt-radio');
-
 export abstract class Sorter {
-  radioPrompt = new Radio({
-    name: 'dataStructures',
-    message: 'What data structure would you like to sort?',
-    choices: ['Array of Numbers', 'Linked List', 'String'],
-  });
-
   abstract compare(leftIndex: number, rightIndex: number): boolean;
   abstract swap(leftIndex: number, rightIndex: number): void;
-  abstract sortUserInput(): void;
+  abstract sortUserInput(param: string | number): void;
   abstract length: number;
 
   sort(): void {
@@ -22,18 +13,6 @@ export abstract class Sorter {
         }
       }
     }
-  }
-
-  startSorting() {
-    this.radioPrompt.ask((answer: answer) => {
-      if (answer === 'Array of Numbers') {
-        this.sortUserInput();
-      } else if (answer === 'String') {
-        this.sortUserInput();
-      } else {
-        this.sortUserInput();
-      }
-    });
   }
 
   sortAndPrint({ data, dataStructure, dataText }: Print) {

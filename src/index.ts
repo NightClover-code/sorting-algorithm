@@ -2,17 +2,30 @@
 const Radio = require('prompt-radio');
 const usePrompt = require('prompt-sync')();
 //importing classes
-import { Sorter } from './Sorter';
+import { NumbersCollection } from './structures/NumbersCollection';
+import { CharactersCollection } from './structures/CharactersCollection';
+import { LinkedList } from './structures/LinkedList';
 
 class SorterStart {
+  radioPrompt = new Radio({
+    name: 'dataStructures',
+    message: 'What data structure would you like to sort?',
+    choices: ['Array of Numbers', 'Linked List', 'String'],
+  });
+
   startSorting() {
     this.radioPrompt.ask((answer: answer) => {
       if (answer === 'Array of Numbers') {
-        this.sortUserInput();
+        const len = usePrompt('Enter the length of the array: ');
+        new NumbersCollection().sortUserInput(len);
       } else if (answer === 'String') {
-        this.sortUserInput();
+        const characters = usePrompt('Enter a string of characters: ');
+        new CharactersCollection().sortUserInput(characters);
       } else {
-        this.sortUserInput();
+        const len = usePrompt(
+          'Enter the number of items to append to the list: '
+        );
+        new LinkedList().sortUserInput(len);
       }
     });
   }
