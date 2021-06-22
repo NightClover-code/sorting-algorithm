@@ -11,11 +11,11 @@ data structures (other than the ones provided with the cli) without starting fro
 
 This is a npm package, to get it on your machine run the following command:
 
-```npm i -g sorting-algo-ts@1.1.3```
+```npm i -g sorting-algo-ts@latest```
 
 or 
 
-```yarn global add sorting-algo-ts@1.1.3```
+```yarn global add sorting-algo-ts@latest```
 
 After  downloading the package, run the follwing command:
 
@@ -30,8 +30,8 @@ This project uses a lot of typescript features such as:
 - Object-oriented programming
 - Abstract classes
 - `public` modifiers
-- Class inheritance
-- Types
+- Inheritance in classes
+- Types & Interfaces
 
 # Contributing 👥
 
