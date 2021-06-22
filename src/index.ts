@@ -20,7 +20,7 @@ class SorterStart {
         new NumbersCollection().sortUserInput(len);
       } else if (answer === 'String') {
         const characters = usePrompt('Enter a string of characters: ');
-        new CharactersCollection().sortUserInput(characters);
+        new CharactersCollection(characters).sortUserInput();
       } else {
         const len = usePrompt(
           'Enter the number of items to append to the list: '

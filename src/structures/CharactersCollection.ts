@@ -1,32 +1,33 @@
 import { Sorter } from '../Sorter';
 
 export class CharactersCollection extends Sorter {
-  characters: string = '';
+  constructor(public data: string) {
+    super();
+  }
 
   get length(): number {
-    return this.characters.length;
+    return this.data.length;
   }
 
   compare(leftIndex: number, rightIndex: number): boolean {
     return (
-      this.characters[leftIndex].toLowerCase() >
-      this.characters[rightIndex].toLowerCase()
+      this.data[leftIndex].toLowerCase() > this.data[rightIndex].toLowerCase()
     );
   }
 
   swap(leftIndex: number, rightIndex: number): void {
-    const characters = this.characters.split('');
+    const data = this.data.split('');
 
-    const leftHand = characters[leftIndex];
-    characters[leftIndex] = characters[rightIndex];
-    characters[rightIndex] = leftHand;
+    const leftHand = data[leftIndex];
+    data[leftIndex] = data[rightIndex];
+    data[rightIndex] = leftHand;
 
-    this.characters = characters.join('');
+    this.data = data.join('');
   }
 
-  sortUserInput(characters: string): void {
+  sortUserInput(): void {
     this.sortAndPrint({
-      data: characters,
+      data: this.data,
       dataStructure: this,
       dataText: 'characters',
     });

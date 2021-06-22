@@ -2,30 +2,30 @@ import { Sorter } from '../Sorter';
 const usePrompt = require('prompt-sync')();
 
 export class NumbersCollection extends Sorter {
-  numbers: number[] = [];
+  data: number[] = [];
 
   get length(): number {
-    return this.numbers.length;
+    return this.data.length;
   }
 
   compare(leftIndex: number, rightIndex: number): boolean {
-    return this.numbers[leftIndex] > this.numbers[rightIndex];
+    return this.data[leftIndex] > this.data[rightIndex];
   }
 
   swap(leftIndex: number, rightIndex: number): void {
-    const leftHand = this.numbers[leftIndex];
-    this.numbers[leftIndex] = this.numbers[rightIndex];
-    this.numbers[rightIndex] = leftHand;
+    const leftHand = this.data[leftIndex];
+    this.data[leftIndex] = this.data[rightIndex];
+    this.data[rightIndex] = leftHand;
   }
 
   sortUserInput(len: number): void {
     for (let i = 0; i < len; i++) {
       const item = usePrompt(`Enter the value [${i}]: `);
-      this.numbers.push(item);
+      this.data.push(item);
     }
 
     this.sortAndPrint({
-      data: this.numbers,
+      data: this.data,
       dataStructure: this,
       dataText: 'nums',
     });
