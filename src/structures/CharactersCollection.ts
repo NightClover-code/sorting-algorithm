@@ -16,7 +16,7 @@ export class CharactersCollection extends Sorter {
     );
   }
 
-  swap(leftIndex: number, rightIndex: number) {
+  swap(leftIndex: number, rightIndex: number): void {
     const characters = this.data.split('');
 
     const leftHand = characters[leftIndex];
