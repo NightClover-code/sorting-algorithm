@@ -1,4 +1,5 @@
 import { Sorter } from '../Sorter';
+const usePrompt = require('prompt-sync')();
 
 class Node {
   next: Node | null = null;
@@ -86,5 +87,20 @@ export class LinkedList extends Sorter {
       console.log(node.data);
       node = node.next;
     }
+  }
+
+  sortUserInput() {
+    const len = usePrompt('Enter the number of items to append to the list: ');
+
+    for (let i = 0; i < len; i++) {
+      const item = usePrompt(`Enter the value ${i}: `);
+      this.add(item);
+    }
+
+    console.log(`Previous Linked List: `);
+    this.print();
+    this.sort();
+    console.log(`\nSorted Linked List: `);
+    this.print();
   }
 }

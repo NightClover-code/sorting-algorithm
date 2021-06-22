@@ -1,4 +1,5 @@
 import { Sorter } from '../Sorter';
+const usePrompt = require('prompt-sync')();
 
 export class CharactersCollection extends Sorter {
   constructor(public data: string) {
@@ -23,5 +24,15 @@ export class CharactersCollection extends Sorter {
     characters[rightIndex] = leftHand;
 
     this.data = characters.join('');
+  }
+
+  sortUserInput() {
+    const characters = usePrompt('Enter a string of characters: ');
+
+    this.sortAndPrint({
+      data: characters,
+      dataStructure: new CharactersCollection(characters),
+      dataText: 'characters',
+    });
   }
 }

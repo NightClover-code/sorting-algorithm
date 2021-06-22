@@ -2,18 +2,9 @@
 const Radio = require('prompt-radio');
 const usePrompt = require('prompt-sync')();
 //importing classes
-import { NumbersCollection } from './structures/NumbersCollection';
-import { CharactersCollection } from './structures/CharactersCollection';
-import { LinkedList } from './structures/LinkedList';
-
-interface Print {
-  dataStructure: NumbersCollection | CharactersCollection;
-  dataText: 'nums' | 'characters';
-  data: number[] | string;
-}
+import { Sorter } from './Sorter';
 
 class SorterStart {
-  numbers: number[] = [];
   radioPrompt = new Radio({
     name: 'dataStructures',
     message: 'What data structure would you like to sort?',
@@ -23,63 +14,13 @@ class SorterStart {
   startSorting() {
     this.radioPrompt.ask((answer: answer) => {
       if (answer === 'Array of Numbers') {
-        this.sortNumbers();
+        this.sortUserInput();
       } else if (answer === 'String') {
-        this.sortCharacters();
+        this.sortUserInput();
       } else {
-        this.sortLinkedList();
+        this.sortUserInput();
       }
     });
-  }
-
-  sortNumbers() {
-    const len = usePrompt('Enter the length of the array: ');
-
-    for (let i = 0; i < len; i++) {
-      const item = usePrompt(`Enter the value [${i}]: `);
-      this.numbers.push(item);
-    }
-
-    const numbersCollection = new NumbersCollection(this.numbers);
-
-    this.sortAndPrint({
-      data: this.numbers,
-      dataStructure: numbersCollection,
-      dataText: 'nums',
-    });
-  }
-
-  sortCharacters() {
-    const characters = usePrompt('Enter a string of characters: ');
-    const charactersCollection = new CharactersCollection(characters);
-
-    this.sortAndPrint({
-      data: characters,
-      dataStructure: charactersCollection,
-      dataText: 'characters',
-    });
-  }
-
-  sortLinkedList() {
-    const len = usePrompt('Enter the number of items to append to the list: ');
-    const linkedList = new LinkedList();
-
-    for (let i = 0; i < len; i++) {
-      const item = usePrompt(`Enter the value ${i}: `);
-      linkedList.add(item);
-    }
-
-    console.log(`Previous Linked List: `);
-    linkedList.print();
-    linkedList.sort();
-    console.log(`\nSorted Linked List: `);
-    linkedList.print();
-  }
-
-  sortAndPrint({ data, dataStructure, dataText }: Print) {
-    console.log(`Previous ${dataText}: `, data);
-    dataStructure.sort();
-    console.log(`Sorted ${dataText}: `, dataStructure.data);
   }
 }
 

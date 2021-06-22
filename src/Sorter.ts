@@ -1,9 +1,18 @@
+import { NumbersCollection } from './structures/NumbersCollection';
+import { CharactersCollection } from './structures/CharactersCollection';
+
+interface Print {
+  dataStructure: NumbersCollection | CharactersCollection;
+  dataText: 'nums' | 'characters';
+  data: number[] | string;
+}
+
 export abstract class Sorter {
   abstract compare(leftIndex: number, rightIndex: number): boolean;
   abstract swap(leftIndex: number, rightIndex: number): void;
+  abstract sortUserInput(): void;
   abstract length: number;
 
-  //sorter method
   sort(): void {
     //sorting logic
     for (let i = 0; i < this.length; i++) {
@@ -13,5 +22,11 @@ export abstract class Sorter {
         }
       }
     }
+  }
+
+  sortAndPrint({ data, dataStructure, dataText }: Print) {
+    console.log(`Previous ${dataText}: `, data);
+    dataStructure.sort();
+    console.log(`Sorted ${dataText}: `, dataStructure.data);
   }
 }
