@@ -43,14 +43,14 @@ As for now, the program enables sorting for 3 data structures.
 - Strings
 - Linked Lists
 
-Feel free to contribute by suggesting different sorting algorithms than bubble sort, or other data structures than the ones listed above
+Feel free to contribute by suggesting different sorting algorithms than bubble sort, or other data structures than the ones listed above.
 
 # How do I add a new data structure ?
 
 Go into the `/structures` folder, you'll find typescript files which represents a class for each data structure. To add a new one, add a new typescript file
 and a new class in that file, then write the sorting logic using the `swap()` and `compare()` methods.
 
-By the time you added the new class, send a pull request so that I merge yo to the `master` branch.  
+By the time you added the new class, send a pull request so that the owners merge it to the `master` branch.  
 
 ## Important Note ⚠️
 
